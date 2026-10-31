@@ -1,0 +1,190 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  min-height: 100vh;
+  color: white;
+  transition: background 0.4s;
+}
+/* Naruto Theme */
+body.naruto {
+  --main: #ff8500;
+  --accent: #ffbd59;
+  background:
+    linear-gradient(#0008, #0009),
+    url("naruto.jpg") center / cover fixed;
+}
+/* Sasuke Theme */
+body.sasuke {
+  --main: #8b5cf6;
+  --accent: #c4b5fd;
+  background:
+    linear-gradient(#0008, #0009),
+    url("sasuke.jpg") center / cover fixed;
+}
+/* Akatsuki Theme */
+body.akatsuki {
+  --main: #e11d48;
+  --accent: #fb7185;
+  background:
+    linear-gradient(#0008, #0009),
+    url("akatsuki.jpg") center / cover fixed;
+}
+/* Sakura Theme */
+body.sakura {
+  --main: #ec4899;
+  --accent: #f9a8d4;
+  background:
+    linear-gradient(#0008, #0009),
+    url("sakura.jpg") center / cover fixed;
+}
+
+.container {
+  max-width: 850px;
+  margin: auto;
+  padding: 30px 18px;
+}
+
+header {
+  text-align: center;
+  padding: 35px 10px;
+}
+
+header h1 {
+  font-size: clamp(28px, 5vw, 44px);
+  color: var(--accent);
+  text-shadow: 0 0 20px var(--main);
+}
+
+header p {
+  margin-top: 12px;
+  color: #ddd;
+}
+/* Glass effect on study cards */
+.card, .theme-box {
+  background: rgba(10, 10, 20, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--main);
+  box-shadow: 0 8px 32px #0006;
+}
+
+.theme-box label {
+  display: block;
+  margin-bottom: 12px;
+}
+
+h2 {
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+
+input, select {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #666;
+  border-radius: 10px;
+  background: #22212d;
+  color: white;
+  outline: none;
+  font-size: 15px;
+}
+
+input:focus, select:focus {
+  border-color: var(--accent);
+}
+
+.task-input {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+button {
+  border: none;
+  background: var(--main);
+  color: white;
+  padding: 13px 18px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  filter: brightness(1.2);
+  transform: scale(1.03);
+}
+
+#taskList {
+  list-style: none;
+  margin-top: 20px;
+}
+
+#taskList li {
+  background: #ffffff12;
+  padding: 13px;
+  margin: 10px 0;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+#taskList li span {
+  flex: 1;
+  overflow-wrap: anywhere;
+}
+
+#taskList li.done span {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+#taskList input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--main);
+  cursor: pointer;
+}
+
+.delete {
+  background: #b91c1c;
+  padding: 9px 12px;
+}
+
+.progress {
+  height: 20px;
+  border-radius: 20px;
+  background: #333;
+  overflow: hidden;
+}
+
+#progressBar {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, var(--main), var(--accent));
+  transition: width 0.4s;
+}
+
+#progressText {
+  margin-top: 12px;
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+  color: var(--accent);
+  padding: 20px;
+}
+
+@media (max-width: 550px) {
+  .task-input {
+    flex-direction: column;
+  }
+}

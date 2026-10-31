@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ninja Study Planner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="naruto">
+
+  <div class="container">
+    <header>
+      <h1>🍥 Ninja Study Planner</h1>
+      <p>Train Hard. Study Smart. Become Hokage!</p>
+    </header>
+
+    <div class="theme-box">
+      <label>Choose Your Ninja Theme</label>
+      <select id="theme" onchange="changeTheme()">
+        <option value="naruto">🍥 Naruto Orange</option>
+        <option value="sasuke">⚡ Sasuke Purple</option>
+        <option value="akatsuki">☁️ Akatsuki Red</option>
+        <option value="sakura">🌸 Sakura Pink</option>
+      </select>
+    </div>
+
+    <section class="card">
+      <h2>📅 Daily Mission</h2>
+      <input type="date" id="date">
+
+      <div class="task-input">
+        <input type="text" id="taskInput"
+          placeholder="Enter your daily mission...">
+        <button onclick="addTask()">Add Mission +</button>
+      </div>
+
+      <ul id="taskList"></ul>
+    </section>
+
+    <section class="card">
+      <h2>🥷 Mission Progress</h2>
+      <div class="progress">
+        <div id="progressBar"></div>
+      </div>
+      <p id="progressText">0% Completed</p>
+    </section>
+
+    <footer>
+      <p>🔥 Believe It! Your Future Starts Today.</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
